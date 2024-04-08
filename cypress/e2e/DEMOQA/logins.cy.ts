@@ -154,7 +154,7 @@ describe('Tests All Elements', () => {
 
             // Buttons
             context('View Buttons page', ()=>{
-                specify('when buttons is clicked', ()=>{
+                specify('when buttons is clicked', ()=>{     
                     elementsPage.getElementsCategory().contains('Buttons').click()
                 })
                 it('should display the button page', ()=>{
