@@ -9,4 +9,4 @@ const homePageObjects = {
     getCategoryCards: () => getElement('[class=category-cards]').children()
 }
 
-export default homePageObjects
+export default homePageObjects 

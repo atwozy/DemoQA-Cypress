@@ -71,7 +71,7 @@ const elementsPage = {
         getDynamicButtonMessage: ()=> getElements('#dynamicClickMessage')
     }
 
-
+ 
 }
 
 export default elementsPage

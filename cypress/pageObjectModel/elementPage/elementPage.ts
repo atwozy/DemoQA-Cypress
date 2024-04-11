@@ -16,4 +16,4 @@ const elementPage = {
     }
 }
 
-export default elementPage
+export default elementPage 

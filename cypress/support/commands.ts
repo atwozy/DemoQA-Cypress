@@ -58,7 +58,7 @@ Cypress.Commands.add('verifyWebTables', (elementSelector: Cypress.Chainable) => 
             }
         })
     })
-})
+}) 
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     return false

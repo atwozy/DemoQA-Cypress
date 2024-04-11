@@ -12,5 +12,5 @@ const formsPageObject = {
         getTextHeader: () => getElements('h1[class=text-center]')
     }
 }
-
+ 
 export default formsPageObject

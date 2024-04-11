@@ -15,4 +15,4 @@ module.exports = defineConfig({
   component: {
     //testIsolation: false
   }
-});
+}); 

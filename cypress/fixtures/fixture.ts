@@ -24,4 +24,4 @@ export const userData = {
     salary: '100000',
     department: 'YG'
   }
-}
+} 

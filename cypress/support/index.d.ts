@@ -4,4 +4,4 @@ declare namespace Cypress {
         verifyTextNotes(elementSelector: Cypress.Chainable, expectedValue: string[]): void;
         verifyWebTables(elementSelector: Cypress.Chainable): void;
     }
-}
+} 
