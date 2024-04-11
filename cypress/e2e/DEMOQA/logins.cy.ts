@@ -172,7 +172,7 @@ describe('Tests All Elements', () => {
                     elementsPage.buttons.getDynamicButtonMessage().should('be.visible')
                 
                 })
-            })
+            }) 
         })
     })
 })
