@@ -32,7 +32,8 @@ import { any } from "cypress/types/bluebird"
 
 // To evaluate two strings between the form and output
 Cypress.Commands.add('verifyText', (elementSelector: Cypress.Chainable, expectedValue: string) => {
-    elementSelector.invoke('text').then((text: string) => {
+    elementSelector.each(($el) => {
+        const text = $el.text()
         const trimText: string = text.split(':')[1].trim()
         expect(trimText).to.equal(expectedValue)
     })
@@ -51,14 +52,13 @@ Cypress.Commands.add('verifyTextNotes', (elementSelector: Cypress.Chainable, exp
 // Invoke text of web tables
 Cypress.Commands.add('verifyWebTables', (elementSelector: Cypress.Chainable) => {
     elementSelector.each(($el) => {
-        cy.wrap($el).invoke('text').then((text: string) => {
-            if (text.includes(userData.webTables.firstName)) {
-                const formArray = [userData.webTables.firstName, userData.webTables.lastName, userData.webTables.age, userData.webTables.email, userData.webTables.salary, userData.webTables.department]
-                expect(text).to.includes(`${formArray.join('')}`)
-            }
-        })
+        const text= $el.text()
+        if (text.includes(userData.webTables.firstName)) {
+            const formArray = [userData.webTables.firstName, userData.webTables.lastName, userData.webTables.age, userData.webTables.email, userData.webTables.salary, userData.webTables.department]
+            expect(text).to.includes(`${formArray.join('')}`)
+        }
     })
-}) 
+})
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     return false

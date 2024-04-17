@@ -23,5 +23,9 @@ export const userData = {
     age: '27',
     salary: '100000',
     department: 'YG'
+  },
+
+  upload:{
+    imageName: 'UploadedImg.jpeg'
   }
 } 

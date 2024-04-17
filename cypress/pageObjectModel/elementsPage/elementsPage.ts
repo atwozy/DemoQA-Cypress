@@ -1,8 +1,10 @@
 import { get } from "cypress/types/lodash"
 import { getElements } from "../demoMethod"
+import { getSyntheticLeadingComments } from "typescript"
 
 const elementsRoot = ('[class=category-cards]')
 const userForm = ('#userForm')
+const rootElement = ('#app')
 
 const elementsPage = {
     getElements: () => getElements(`${elementsRoot}`).children(),
@@ -69,7 +71,34 @@ const elementsPage = {
         getDoubleButtonMessage: ()=> getElements('#doubleClickMessage'),
         getRightButtonMessage: ()=> getElements('#rightClickMessage'),
         getDynamicButtonMessage: ()=> getElements('#dynamicClickMessage')
+    },
+
+    links:{
+        getTextHeader: () => getElements('h1[class=text-center]'),
+        homeLink: () => getElements('#simpleLink'),
+        getHomeHeaderLogo: () => getElements(`${rootElement} img[src*=Toolsqa]`),
+        homeG8By3cLink: () => getElements('#dynamicLink'),
+        getCreated: () => getElements('#created'),
+        getNoContent: () => getElements('#no-content'),
+        getMoved: () => getElements('#moved'),
+        getBadRequest: () => getElements('#bad-request'),
+    },
+
+    brokenlinks:{
+        getTextHeader: () => getElements('h1[class=text-center]'),
+        getImage: () => getElements('[src*=Toolsqa]')
+    },
+
+    uploads: {
+        getTextHeader: () => getElements('h1[class=text-center]'),
+        getDownload: ()=> getElements('#downloadButton'),
+        getAttrDownload: ()=> getElements('a[download="sampleFile.jpeg"]'),
+        getChooseFile: () => getElements('#uploadFile'),
+        uploadFilePath: () => getElements('#uploadedFilePath')
+
     }
+
+
 
  
 }
